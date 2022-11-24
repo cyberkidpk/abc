@@ -79,7 +79,7 @@ for (let i = 0; i < 40; i += 1) {
   data.push({
     name: `Name ${i + 1}`,
     project: projects[i % projects.length],
-    date: `2018-07-${(i % 30) + 1}`,
+    date: `2022-07-${(i % 30) + 1}`,
     percent: (i % 11) * 10,
     addparameters: ((i + 1) * 17) % 1000,
   });
@@ -97,7 +97,7 @@ export const DATA = [
   {
     name: 'Bryan',
     project: 'CDL2.0 Silver',
-    date: '2018-06-10',
+    date: '2022-06-10',
     percent: 30,
     requeststatus:'Approved',
     addparameters: 1234,
@@ -105,7 +105,7 @@ export const DATA = [
   {
     name: 'Chris',
     project: 'CDL2.0 Silver',
-    date: '2018-06-09',
+    date: '2022-06-09',
     percent: 40,
         requeststatus:'Approved',
     addparameters: 2345,
@@ -113,7 +113,7 @@ export const DATA = [
   {
     name: 'Eric',
     project: 'CDL2.0 Gold',
-    date: '2018-06-11',
+    date: '2022-06-11',
     percent: 80,
         requeststatus:'Approved',
     addparameters: 3456,
@@ -121,7 +121,7 @@ export const DATA = [
   {
     name: 'Doug',
     project: 'CDL2.0 Silver',
-    date: '2018-06-10',
+    date: '2022-06-10',
     percent: 60,
         requeststatus:'Approved',
     addparameters: 1234,
@@ -129,7 +129,7 @@ export const DATA = [
   {
     name: 'Jet',
     project: 'CDL2.0 Gold',
-    date: '2018-06-09',
+    date: '2022-06-09',
     percent: 40,
         requeststatus:'Approved',
     addparameters: 3456,
@@ -137,7 +137,7 @@ export const DATA = [
   {
     name: 'Michael',
     project: 'CDL2.0 Gold',
-    date: '2018-06-11',
+    date: '2022-06-11',
     percent: 50,
         requeststatus:'Approved',
     addparameters: 1234,
@@ -145,7 +145,7 @@ export const DATA = [
   {
     name: 'Tracy',
     project: 'CDL2.0 Silver',
-    date: '2018-06-10',
+    date: '2022-06-10',
     percent: 10,
         requeststatus:'Approved',
     addparameters: 2345,
