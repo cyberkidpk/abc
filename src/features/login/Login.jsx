@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import '../../assets/css/_index.scss'
-import Logo from '../../assets/images/logo.jpg'
+//import Logo from '../../assets/images/logo.jpg'
 
 export { Login };
 
@@ -26,7 +26,8 @@ function Login() {
 
 
     function onSubmit({ username, password }) {
-        navigate('/home');
+    window.localStorage.setItem('user', JSON.stringify(username));
+        navigate('/projects-and-pipelines');
     }
 
     return (
@@ -35,7 +36,7 @@ function Login() {
 
             <Card  height="medium" width="medium" pad="medium" background="light-1">
                 <CardHeader pad="medium">
-                <Image src={Logo} width="200"/>
+               {/* <Image src={Logo} width="200"/>*/}
                 <Text>Login</Text>
 
                 </CardHeader>

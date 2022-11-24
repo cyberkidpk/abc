@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { Header, Text, Image, Button, Box, Anchor } from "grommet"
 
-import HeaderBg  from '../assets/images/header.png'
+//import HeaderBg  from '../assets/images/header.png' backgroundImage:`url(${HeaderBg})`
 
 export { Nav };
 
@@ -10,7 +10,7 @@ function Nav() {
     return (
      <Header
      className="header"
-          style={{ backgroundImage:`url(${HeaderBg})`, justifyContent:'right', height:'120px', position:'left top', backgroundRepeat:'no-repeat', backgroundSize: '100% 90px'}}
+          style={{ justifyContent:'right', height:'120px', position:'left top', backgroundRepeat:'no-repeat', backgroundSize: '100% 90px'}}
           sticky="scrollup"
           pad={{ vertical: 'small' }}
         >

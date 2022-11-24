@@ -1,15 +1,19 @@
 import React from "react";
 import {
   createBrowserRouter,
+  createRoutesFromElements,
   RouterProvider,
   Route,
   Navigate,
 } from "react-router-dom";
+
+import { ProtectedRoute } from './app/ProtectedRoute'
 import "./index.css";
 import { RouterComponent } from './app/router'
 import { Grommet, grommet, Page, PageContent} from 'grommet'
 import {Nav} from './app/Nav'
 import App from './App'
+import {AuthLayout} from './app/AuthLayout';
 import { Home } from './features/home';
 import { Login } from './features/login';
 
@@ -75,19 +79,22 @@ const customTheme = {
 
 
 function Shell() {
-const routerApp1 = createBrowserRouter([
-  {
-    path: "/",
-    element: <ProjectsAndPipelines />,
-  },
-  { path:"/login", element:<Login /> },
-    { path:"/projects-and-pipelines", element:<ProjectsAndPipelines /> },
-    { path:"/sqoop", element:<SqoopIngestion /> },
-    { path:"/review-ingestion", element:<ReviewIngestion /> },
-     { path:"/view-status-and-details", element:<ViewStatusAndDetails /> },
-    { path:"*", element:<Navigate to="/" /> }
-
-]);
+const routerApp1 = createBrowserRouter(createRoutesFromElements(
+<>
+  <Route path= "/" element={ <Navigate to='/login' />}/>
+  <Route path="/login" element={<Login />} />
+  <Route element={<AuthLayout/>}>
+   <Route path="/projects-and-pipelines" element={
+            <ProtectedRoute>
+                 <ProjectsAndPipelines />
+             </ProtectedRoute>} />
+        <Route path="/sqoop" element={<SqoopIngestion />} />
+        <Route path="/review-ingestion" element={<ReviewIngestion /> } />
+        <Route path="/view-status-and-details" element={<ViewStatusAndDetails /> } />
+    </Route>
+    <Route path="*" element={<Navigate to="/" />}/>
+</>
+));
   return (
   <Grommet theme={customTheme}>
       <div className="app-container">
