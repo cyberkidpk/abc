@@ -10,7 +10,7 @@ function Nav() {
     return (
      <Header
      className="header"
-          style={{ justifyContent:'right', height:'120px', position:'left top', backgroundRepeat:'no-repeat', backgroundSize: '100% 90px'}}
+          style={{ background:"#001E49", justifyContent:'right', height:'70px', position:'left top', backgroundRepeat:'no-repeat', backgroundSize: '100% 90px'}}
           sticky="scrollup"
           pad={{ vertical: 'small' }}
         >

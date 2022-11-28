@@ -20,6 +20,12 @@ input{
     padding:2px !important;
     color:#72A6F5 !important;
 }
+#review div, #review label{
+ line-height:3px;
+ margin:0;
+ padding:0;
+
+}
 
 .flex-wrap{
     flex-wrap:wrap;
