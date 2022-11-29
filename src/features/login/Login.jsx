@@ -1,5 +1,15 @@
-import { useEffect } from 'react';
-import { Box, Card, CardBody, CardHeader , CardFooter, Image, Text, TextInput, Form, Button } from "grommet"
+import { useEffect, useState } from 'react';
+import { Box,
+Card,
+CardBody,
+CardHeader ,
+CardFooter,
+Image,
+Text,
+TextInput,
+Form,
+Button,
+ Layer } from "grommet"
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -23,6 +33,7 @@ function Login() {
     // get functions to build form with useForm() hook
     const { register, handleSubmit, formState } = useForm(formOptions);
     const { errors, isSubmitting } = formState;
+    const [show, setShow] = useState(true)
 
 
     function onSubmit({ username, password }) {
@@ -33,8 +44,16 @@ function Login() {
     return (
         <Box direction="row"  pad="medium"
  className="item-wrapper">
+ <Layer
+          onEsc={() => setShow(false)}
+          onClickOutside={() => setShow(false)}
+          background="dark"
+          id="login-layer"
+        >
 
-            <Card  height="medium" width="medium" pad="medium" background="light-1">
+
+
+            <Card  height="medium" width="medium" pad="medium" background="light-1" style={{borderRadius:'20px', background:'#efefef'}}>
                 <CardHeader pad="medium">
                {/* <Image src={Logo} width="200"/>*/}
                 <Text>Login</Text>
@@ -65,6 +84,7 @@ function Login() {
                 Password: test
             </CardFooter>
             </Card>
+            </Layer>
         </Box>
     )
 }

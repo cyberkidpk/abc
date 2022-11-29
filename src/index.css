@@ -20,6 +20,9 @@ input{
     padding:2px !important;
     color:#72A6F5 !important;
 }
+#login-layer > div{
+background: url('./assets/images/bg.png') center center no-repeat;
+}
 #review div, #review label{
  line-height:3px;
  margin:0;
